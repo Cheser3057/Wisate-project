@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Banyuwangi Tourism</title>
+    <title>Cipendok waterfall</title>
     <x-jslink></x-jslink>
   </head>
   <body>
