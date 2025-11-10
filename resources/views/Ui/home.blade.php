@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Travel</title>
-    <style>
+    {{-- <style>
         * {
             font-family: Arial, Helvetica, sans-serif;
             line-height: 20px;
@@ -379,11 +379,425 @@
 
             }
         }
+    </style> --}}
+    <style>
+            <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 20px;
+            font-size: 15px;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .layar-dalam {
+            width: 1000px;
+            margin: auto;
+        }
+
+        .layar-penuh {
+            width: 100%
+        }
+
+        /* NAVBAR STYLING - DIPERBAIKI */
+        nav {
+            z-index: 1000;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            line-height: 60px;
+            width: 100%;
+            transition: all 0.3s ease;
+            background: transparent;
+            border-bottom: 1px solid transparent;
+        }
+
+        nav.scrolled {
+            background-color: #fff;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #b1b1b1;
+        }
+
+        nav .logo {
+            float: left;
+            position: relative;
+            line-height: 55px;
+            text-align: center;
+        }
+
+        nav .logo img {
+            vertical-align: middle;
+            width: 120px;
+            transition: all 0.3s ease;
+        }
+
+        nav .logo img.hitam {
+            display: none;
+        }
+
+        nav.scrolled .logo img.putih {
+            display: none;
+        }
+
+        nav.scrolled .logo img.hitam {
+            display: inline;
+        }
+
+        nav .menu {
+            float: right;
+            height: 60px;
+            max-width: 600px;
+        }
+
+        nav .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav .menu ul li {
+            list-style-type: none;
+            float: left;
+            line-height: 60px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-align: center;
+            padding: 0px 16px 0px 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav.scrolled ul li a {
+            color: #333;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        nav ul li a.tombol {
+            background-color: #6bc87e;
+            height: 40px;
+            line-height: 42px;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0px 20px 0px 20px;
+            font-size: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        nav.scrolled ul li a.tombol {
+            background-color: #6bc87e;
+            color: #fff;
+        }
+
+        /* PERBAIKAN PADA HEADER DAN VIDEO */
+        header {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        header .intro {
+            z-index: 100;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        header .intro h3 {
+            font-size: 50px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tombol {
+            background-color: #6bc87e;
+            height: 40px;
+            line-height: 42px;
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0px 20px 0px 20px;
+            font-size: 15px;
+            border-radius: 4px;
+        }
+
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #000;
+            opacity: 50%;
+            z-index: 0;
+        }
+
+        .tombol-menu {
+            position: relative;
+            top: 1.7rem;
+            right: 1rem;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            display: none;
+        }
+
+        .tombol-menu .garis {
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        nav.scrolled .tombol-menu .garis {
+            background-color: #333;
+        }
+
+        section {
+            padding: 50px 0px 50px 0px;
+        }
+
+        section h3 {
+            font-size: 30px;
+        }
+
+        section h3::after {
+            content: "";
+            border-bottom: 5px solid #c86b85;
+            width: 52px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        #aboutus,
+        #team,
+        #blog {
+            text-align: center;
+        }
+
+        section p.ringkasan {
+            font-style: italic;
+            font-size: 18px;
+            color: #ababab;
+        }
+
+        section .konten-isi p {
+            font-style: normal;
+        }
+
+        section.abuabu {
+            background-color: #f5f6f6;
+        }
+
+        .support,
+        .tim,
+        .blog {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .support h6,
+        .tim h6 {
+            margin: 0px;
+            margin-top: 20px;
+            padding: 0px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .support img {
+            width: 50px;
+        }
+
+        .support div,
+        .tim div {
+            text-align: center;
+            width: 26%;
+        }
+
+        section#gallery {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            overflow: hidden;
+            padding: 10px 0px 10px 0px;
+        }
+
+        section#gallery div {
+            padding: 10px;
+        }
+
+        section#gallery div img {
+            height: 100px;
+            border-radius: 5px;
+        }
+
+        section#gallery div img:hover {
+            transition: all 0.2s ease-in-out;
+            transform: scale(1.1);
+        }
+
+        section.quote {
+            background: url('gambar/background-bromo.jpg') no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            text-align: center;
+            color: #fff;
+            font-size: 20px;
+            font-style: italic;
+            padding: 100px;
+        }
+
+        section.quote .layar-dalam {
+            display: inline;
+            background: url(gambar/quote-icon.png) no-repeat;
+            padding: 40px;
+        }
+
+        .tim img {
+            width: 100%;
+            box-shadow: 0px -10px 30px #ccc;
+            border-radius: 5px;
+        }
+
+        .blog .area {
+            width: 47%;
+            box-shadow: 0px -10px 30px #ccc;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .blog div.area div {
+            width: 50%;
+        }
+
+        .blog .area .gambar {
+            border-radius: 5px 0px 0px 5px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+        }
+
+        .blog .area .text article {
+            padding: 40px;
+        }
+
+        .blog .area .text article h4 {
+            margin: 0px;
+        }
+
+        .blog .area .text article a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.5s ease;
+        }
+
+        .blog .area .text article a:hover {
+            color: #ccc;
+        }
+
+        footer {
+            padding: 50px 0px 50px 0px;
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        footer .layar-dalam {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        footer .layar-dalam div {
+            width: 20%;
+        }
+
+        footer .layar-dalam h5 {
+            margin-top: 0px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        @media screen and (max-width:991.98px) {
+            .layar-dalam {
+                width: 90%;
+            }
+
+            nav .menu ul {
+                display: none;
+                margin-top: 60px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                flex-direction: column;
+            }
+
+            nav .menu ul.active {
+                display: flex;
+            }
+
+            nav .menu ul li {
+                width: 100%;
+                border-bottom: 1px solid #ccc;
+                background-color: #fff;
+                line-height: 40px;
+            }
+
+            nav .menu ul li a {
+                color: #333;
+                display: block;
+            }
+
+            .tombol-menu {
+                display: flex;
+                cursor: pointer;
+            }
+        }
+    </style>
     </style>
 </head>
 
 <body>
-    <nav>
+    <nav id="navbar">
         <div class="layar-dalam">
             <div class="logo">
                 <a href=""><img src="asset/logo utama.png" class="putih" alt=""></a>
@@ -403,8 +817,7 @@
                     <li><a href="#team">Team</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="/tiket/create" class="tombol">Tiket</a>
-                    </li>
+                    <li><a href="/tiket/create" class="tombol">Tiket</a></li>
                 </ul>
             </div>
         </div>
@@ -549,6 +962,34 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        // Scroll effect untuk navbar
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 800) { // Ganti 500 dengan tinggi header
+                $('#navbar').addClass('scrolled');
+            } else {
+                $('#navbar').removeClass('scrolled');
+            }
+        });
+
+        // Tombol menu mobile
+        $('.tombol-menu').click(function() {
+            $('.menu ul').toggleClass('active');
+        });
+
+        // Smooth scroll untuk link navbar
+        $('nav a[href^="#"]').on('click', function(e) {
+            e.preventDefault();
+            var target = this.hash;
+            var $target = $(target);
+            
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top - 70
+            }, 800, 'swing', function() {
+                window.location.hash = target;
+            });
+        });
+    </script>
     <x-js></x-js>
 </body>
 
