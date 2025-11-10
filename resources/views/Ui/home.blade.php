@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,17 +18,21 @@
             padding: 0;
             scroll-behavior: smooth;
         }
+
         body {
             margin: 0px;
             padding: 0px;
         }
+
         .layar-dalam {
             width: 1000px;
             margin: auto;
         }
+
         .layar-penuh {
             width: 100%
         }
+
         nav {
             z-index: 100;
             color: #fff;
@@ -38,21 +43,24 @@
             width: 100%;
             transition: background-color 0.5s ease;
         }
+
         nav.putih {
             background-color: #fff;
         }
 
-        nav .logo{
+        nav .logo {
             float: left;
             position: relative;
             line-height: 55px;
             text-align: center;
         }
+
         nav .logo img {
             vertical-align: middle;
             width: 120px;
         }
-        nav .menu{
+
+        nav .menu {
             float: right;
             height: 60px;
             max-width: 600px;
@@ -61,7 +69,8 @@
         nav .menu ul {
             list-style-type: none;
             margin: 0;
-            padding: 0;display: flex;
+            padding: 0;
+            display: flex;
 
         }
 
@@ -110,7 +119,7 @@
             transform: translateY(-50%);
         }
 
-        header .intro h3{
+        header .intro h3 {
             font-size: 50px;
             margin: 0;
             padding: 0;
@@ -157,9 +166,11 @@
         section {
             padding: 50px 0px 50px 0px;
         }
+
         section h3 {
             font-size: 30px;
         }
+
         section h3::after {
             content: "";
             border-bottom: 5px solid #c86b85;
@@ -168,7 +179,9 @@
             margin: 20px auto;
         }
 
-        #aboutus,#team,#blog {
+        #aboutus,
+        #team,
+        #blog {
             text-align: center;
         }
 
@@ -197,17 +210,21 @@
         nav .logo img.hitam {
             display: none;
         }
+
         section.abuabu {
             background-color: #f5f6f6;
         }
 
-        .support, .tim, .blog {
+        .support,
+        .tim,
+        .blog {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
         }
 
-        .support h6, .tim h6 {
+        .support h6,
+        .tim h6 {
             margin: 0px;
             margin-top: 20px;
             padding: 0px;
@@ -219,10 +236,12 @@
             width: 50px;
         }
 
-        .support div, .tim div {
+        .support div,
+        .tim div {
             text-align: center;
             width: 26%;
         }
+
         section#gallery {
             display: flex;
             flex-direction: row;
@@ -230,19 +249,23 @@
             overflow: hidden;
             padding: 10px 0px 10px 0px;
         }
+
         section#gallery div {
             padding: 10px;
         }
+
         section#gallery div img {
             height: 100px;
             border-radius: 5px;
         }
+
         section#gallery div img:hover {
             transition: all 0.2s ease-in-out;
             transform: scale(1.1);
         }
+
         section.quote {
-            background:url('gambar/background-bromo.jpg') no-repeat;
+            background: url('gambar/background-bromo.jpg') no-repeat;
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
@@ -252,16 +275,19 @@
             font-style: italic;
             padding: 100px;
         }
+
         section.quote .layar-dalam {
             display: inline;
             background: url(gambar/quote-icon.png) no-repeat;
             padding: 40px;
         }
+
         .tim img {
             width: 100%;
             box-shadow: 0px -10px 30px #ccc;
             border-radius: 5px;
         }
+
         .blog .area {
             width: 47%;
             box-shadow: 0px -10px 30px #ccc;
@@ -270,6 +296,7 @@
             flex-direction: row;
             justify-content: space-between;
         }
+
         .blog div.area div {
             width: 50%;
         }
@@ -285,17 +312,21 @@
         .blog .area .text article {
             padding: 40px;
         }
+
         .blog .area .text article h4 {
             margin: 0px;
         }
+
         .blog .area .text article a {
             color: #333;
             text-decoration: none;
             transition: color 0.5s ease;
         }
+
         .blog .area .text article a:hover {
             color: #ccc;
         }
+
         footer {
             padding: 50px 0px 50px 0px;
             background-color: #343a40;
@@ -317,12 +348,13 @@
             font-size: 20px;
             font-weight: bold;
         }
-        
+
         @media screen and (max-width:991.98px) {
             .layar-dalam {
                 width: 90%;
             }
-            nav .menu ul{
+
+            nav .menu ul {
                 display: none;
                 margin-top: 60px;
                 position: absolute;
@@ -344,11 +376,12 @@
 
             .tombol-menu {
                 display: flex;
-                
+
             }
         }
     </style>
 </head>
+
 <body>
     <nav>
         <div class="layar-dalam">
@@ -364,12 +397,14 @@
                 </a>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#aboutus">About Us</a></li>
+                    <li><a href="#aboutus">About</a></li>
                     <li><a href="#support">Support</a></li>
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#team">Team</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="/tiket/create" class="tombol">Tiket</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -381,7 +416,7 @@
                 <source src="gambar/indonesia.mp4" type="video/mp4" />
             </video>
             <div class="intro">
-                <h3>Visit Cilongok</h3>
+                <h3>Visit Curug Cipendok</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, impedit!</p>
                 <p>
                     <a href="" class="tombol">MORE INFO</a>
@@ -463,8 +498,8 @@
                     <p class="ringkasan">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum, fugiat!</p>
                     <div class="blog">
                         <div class="area">
-                            <div class="gambar" 
-                            style="background-image: url('gambar/blog1.jpg')"></div>
+                            <div class="gambar"
+                                style="background-image: url('gambar/blog1.jpg')"></div>
                             <div class="text">
                                 <article>
                                     <h4><a href="">What About Bromo?</a></h4>
@@ -473,8 +508,8 @@
                             </div>
                         </div>
                         <div class="area">
-                            <div class="gambar" 
-                            style="background-image: url('gambar/blog2.jpg')"></div>
+                            <div class="gambar"
+                                style="background-image: url('gambar/blog2.jpg')"></div>
                             <div class="text">
                                 <article>
                                     <h4><a href="">What Yogyakarta?</a></h4>
@@ -516,4 +551,5 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <x-js></x-js>
 </body>
+
 </html>
