@@ -151,10 +151,17 @@
             transform: translateY(-50%);
         }
 
-        header .intro h3 {
-            font-size: 50px;
-            margin: 0;
-            padding: 0;
+        .intro h3 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .intro p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         .tombol {
