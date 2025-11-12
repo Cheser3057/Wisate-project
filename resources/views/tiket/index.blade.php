@@ -61,10 +61,10 @@
                                     @endif
                                 </td>
                                 <td class="text-center">
-                                    <a href="https://wa.me/{{ $item->no_hp }}" target="_blank" class="btn btn-success btn-sm">Chat WA</a>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger btn-sm">Hapus</button>
+                                    <form action="{{ route('tiket.updateStatus', $item->id) }}" method="POST" onsubmit="return confirm('Ubah status tiket menjadi selesai?')">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit" class="btn btn-primary btn-sm">Ubah Status</button>
                                     </form>
                                 </td>
                             </tr>

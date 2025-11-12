@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="id">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +9,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        .navbar-brand {
+            font-size: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link {
+            color: #ffffffcc !important;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #fff !important;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+
         body {
             background: linear-gradient(135deg, #c9e8ff, #f2f9ff);
             font-family: 'Poppins', sans-serif;
@@ -117,51 +136,69 @@
 
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Logo" width="30" height="30" class="me-2">
+                Curug Cipendok
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('tiket/create') ? 'active' : '' }}" href="{{ route('tiket.create') }}">Pesan Tiket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('tiket/cek-pemesanan') ? 'active' : '' }}" href="{{ route('tiket.cek-pemesanan') }}">Riwayat Pemesanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    @foreach ($tiket as $item)
     <div class="ticket-card">
         <div class="ticket-header">
             <h2>Detail Pemesanan Tiket Wisata</h2>
         </div>
 
         <div class="ticket-body">
-            <p><strong>Kode Tiket:</strong> {{ $tiket->kode_tiket }}</p>
-            <p><strong>Nama:</strong> {{ $tiket->nama }}</p>
-            <p><strong>Email:</strong> {{ $tiket->email }}</p>
-            <p><strong>No HP:</strong> {{ $tiket->no_hp }}</p>
-            <p><strong>Jumlah Tiket:</strong> {{ $tiket->jumlah_tiket }}</p>
-            <p><strong>Tanggal Kunjungan:</strong> {{ $tiket->tanggal_kunjungan }}</p>
-            <p><strong>Metode Pembayaran:</strong> {{ $tiket->metode_pembayaran }}</p>
-            <p><strong>Total Harga:</strong> <span class="text-primary fw-bold">Rp{{ number_format($tiket->total_harga, 0, ',', '.') }}</span></p>
+            <p><strong>Kode Tiket:</strong> {{ $item->kode_tiket }}</p>
+            <p><strong>Nama:</strong> {{ $item->nama }}</p>
+            <p><strong>Email:</strong> {{ $item->email }}</p>
+            <p><strong>No HP:</strong> {{ $item->no_hp }}</p>
+            <p><strong>Jumlah Tiket:</strong> {{ $item->jumlah_tiket }}</p>
+            <p><strong>Tanggal Kunjungan:</strong> {{ $item->tanggal_kunjungan }}</p>
+            <p><strong>Metode Pembayaran:</strong> {{ $item->metode_pembayaran }}</p>
+            <p><strong>Total Harga:</strong>
+                <span class="text-primary fw-bold">
+                    Rp{{ number_format($item->total_harga, 0, ',', '.') }}
+                </span>
+            </p>
             <p><strong>Status:</strong>
-                <span class="status {{ $tiket->status == 'pending' ? 'pending' : 'selesai' }}">
-                    {{ $tiket->status }}
+                <span class="status {{ $item->status == 'pending' ? 'pending' : 'selesai' }}">
+                    {{ $item->status }}
                 </span>
             </p>
 
-            <!-- 🔹 Bagian QRIS -->
-            <div class="qris-section">
-                <h5>Scan QRIS untuk Pembayaran</h5>
-                <p class="text-muted mb-2">Silakan scan QR di bawah untuk melakukan pembayaran tiket Anda.</p>
-                <img src="https://www.pngall.com/wp-content/uploads/2/QR-Code-PNG-Free-Image.png" alt="QRIS Pembayaran">
-                <p class="text-muted mt-2"><small>*Setelah melakukan pembayaran, kirim bukti pembayaran via WhatsApp di bawah ini.</small></p>
-            </div>
-
-            <div class="text-center mt-4">
-                @php
-                $pesanWA = urlencode("Halo, saya ingin konfirmasi pembayaran tiket atas nama $tiket->nama dengan kode $tiket->kode_tiket. Berikut bukti pembayaran saya.");
-                @endphp
-                <a href="https://wa.me/62895384471300?text={{ $pesanWA }}"
-                    target="_blank"
-                    class="btn-wa"> 
-                    💬 Konfirmasi via WhatsApp
-                </a>
-            </div>
         </div>
+    </div>
+    @endforeach
 
-        <div class="footer">
-            &copy; {{ date('Y') }} Curug Cipendok Ticketing — All Rights Reserved
-        </div>
+    <div class="footer">
+        &copy; {{ date('Y') }} Curug Cipendok Ticketing — All Rights Reserved
+    </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
